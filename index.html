@@ -152,9 +152,59 @@
 
 <h2>Methodology</h2>
 <h2>Social Impact</h2>
+    <br>
+
+    <h3>Positive Impacts:</h3>
+    <ul>
+        <li><strong>Fairness:</strong> Provides an orthogonal view of fairness. Fairness in AI has been output-centered but this paper provides an opportunity to include fairness at the model input level.</li>
+
+        <li><strong>Diversity:</strong> Provides a way to include the values of diverse groups of people.</li>
+
+        <li><strong>Inclusion:</strong> Ensures we can hear the voices of underrepresented groups and learn from them.</li>
+
+        <li><strong>Interpretability:</strong> Provides visualizations and model results that are more interpretable.</li>
+
+        <li><strong>Better Decision Making:</strong> ML and HCI Practitioners can visualize results which can lead to better decision making.</li>
+    </ul>
+
+    <h3>Negative Impacts:</h3>
+    <ul>
+        <li><strong>Bias:</strong> Biased Jurors and ML practitioners can create harmful models.</li>
+
+        <li><strong>Privacy:</strong> As it involves a lot of information about the demographics and identity of annotators, it can affect their privacy.</li>
+
+        <li><strong>Abdication of Responsibility:</strong> Who should be held accountable if something goes wrong? ML practitioners, jurors, or companies deploying the model.</li>
+
+        <li><strong>Ecological Fallacy:</strong> We associate attributes on a group with individuals when we take the means of all the juries as the final output.</li>
+    </ul>
 <h2>Industrial Application</h2>
-<h2>Academic Research</h2>
+    <p> Companies can shift the AI models they use to this new paradigm based on Jury Learning. It offers better interpretability, visualization and decision making. Suppose you are a journalist and your comment was removed by a toxicity detection model, you would want to know what about it was toxic. With Jury Learning, the companies can provide a better reasoning like "A jury of 6 people including 2 black women, 2 white women, and 2 asian men found this toxic". </p>
+    <p> Companies also don't have to undergo the tedious and time-consuming process of creating ML models for different target population. They can use same model but a jury composition that represents the target population the best. </p>
+
+    <h2>Academic Research</h2>
+    <p> Jury learning currently models values and voices of annotators based on their demographics. An intriguing avenue for expanding this research would be implicitly deriving these values and voices from the data, without necessitating explicit demographic information. This would allow models to learn more nuanced values of a person which are not just based on their identity or demographics.  Consider a dietitian striving to suggest the optimal food items for a person. Employing a "jury learning" model with implicit values learning that learns from  past data of  the target individual and comparable profiles would help in making food items suggestion based on preferences and values of the individual. This nuanced approach would help us build human-centric ML models that are grounded in values and preferences.</p>
 <h2>Peer-Review</h2>
+    <br>
+
+    <h3> Reviewer 1 (Akshat Choube)</h3> <br>
+    <p> <b> Score: 7 (Accept)</b></p>
+    <p> <b> Strengths </b></p>
+    <ul>
+        <li>Introduces a new architecture that combines Deep Cross Networks with LLMs</li>
+        <li>Jointly modelling annotators
+            and the task is unique</li>
+        <li>Introduces a new learning framework that is more grounded in human values</li>
+        <li>Makes the model more explainable and offers better decision-making for ML practitioners</li>
+    </ul>
+
+    <p> <b> Weakness </b></p>
+    <ul>
+        <li>The paper missed the in-detail discussion of the applicability of “Jury Learning” in other domains.</li>
+        <li>The authors should have discussed in more detail the limitations of this framework.</li>
+        <li>Jury selection is an important aspect of this paper, and authors should have discussed a more algorithmic approach to it.</li>
+        <li>Some parts of the paper were repetitive.</li>
+    </ul>
+
 <h3>References</h3>
 
 
