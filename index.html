@@ -158,22 +158,19 @@
       A Deep & Cross Network (DCN) is used in the architecture. A typical DCN involves three sets of embeddings: content, annotator, and group. The content embedding enables prediction on previously unseen items by mapping those items into a shared space. The group embeddings make use of the data from all annotators who belong to each group, helping overcome sparsity in the dataset. The annotator embedding ensures that the model learns when each annotator differs from the groups they belong to. The DCN learns to combine these embeddings to predict each individual annotator's reaction to an example: the embeddings are concatenated into an input layer, then fed into a cross network containing multiple cross layers that model explicit feature interactions, and then combined with a deep network that models implicit feature interactions. The DCN architecture is modified to jointly train a pre-trained BERT-based model, using its pooler output as the content embeddings. 
     </p>
    
-
     <div style="text-align:center;">
-        <img src="images/user-evaluation.png" alt="User Evaluation" width="800" height="300">
-    </div>
-    <p> For user evaluation, authors selected 19 content moderators. They explained them the Jury Learning algorithm, showed them a sample of toxic comments, and asked them to comprise juries. They found that in average 13.6% of decisions flipped between jury learning classifier customized for a community and an off the shelf classifier.</p>
-    
-    
-    <div style="text-align:center;">
-      <img src="images/model_performance.png" alt=": Performance against individual annotator's test labels" width="800" height="300">
+      <img src="images/model_performance.PNG" alt=": Performance against individual annotator's test labels" width="800" height="300">
     </div>
     <p> Performance against individual annotator's test labels for three models: today's standard state-of-the-art aggregate
       approach (which is annotator-agnostic, and makes one prediction per example), a group-specific version of our proposed architecture, and the full version of our proposed architecture. The standard aggregated model’s performance varies substantially
       between groups. For instance, it achieves an MAE of 0.83 for Asian annotators and 1.12 for Black annotators, a performance decrease of 35.0%. By comparison, we find that our model does show differences between groups, but with far smaller magnitudes.
       It achieves an MAE of 0.62 for Asian annotators and 0.65 for Black annotators, a performance decrease of 4.9%. </p>
 
-
+    <div style="text-align:center;">
+        <img src="images/user-evaluation.png" alt="User Evaluation" width="800" height="300">
+    </div>
+    <p> For user evaluation, authors selected 19 content moderators. They explained them the Jury Learning algorithm, showed them a sample of toxic comments, and asked them to comprise juries. They found that in average 13.6% of decisions flipped between jury learning classifier customized for a community and an off the shelf classifier.</p>
+    
 
     <div style="text-align:center;">
       <img src="images/main_diag.PNG" alt="System Overview" width="800" height="500">
