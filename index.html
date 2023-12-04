@@ -159,12 +159,23 @@
     </p>
    
 
-
     <div style="text-align:center;">
         <img src="images/user-evaluation.png" alt="User Evaluation" width="800" height="300">
     </div>
     <p> For user evaluation, authors selected 19 content moderators. They explained them the Jury Learning algorithm, showed them a sample of toxic comments, and asked them to comprise juries. They found that in average 13.6% of decisions flipped between jury learning classifier customized for a community and an off the shelf classifier.</p>
-
+    
+    <div style="text-align:center;">
+      <img src="images/main_diag.PNG" alt="System Overview" width="800" height="300">
+   </div>
+   <p> In the Jury Selection portion of the system, the user can create juror sheets to populate their jury
+    composition and can provide one or more input examples to evaluate. Then, the system outputs the Jury Learning Results
+    section where they can view a summary of the jury verdict based on a median-of-means estimator of jury outcomes. Here, they
+    can view the full distribution of jury outcomes, select individual juries to view trends, and inspect individual jurors on a jury.
+    When a user selects a jury, the Jury Trends section is updated. There, they can group by different fields like the juror sheet,
+    decision label, or other demographic attributes to understand patterns in the labels from this jury and contextualize them
+    with respect to the larger population. When a user selects a particular juror, the Juror Details view opens, and they can
+    inspect the predicted label for the juror, the background of this juror, and the juror's annotations. Users can also inspect
+    counterfactual juries that would result in the opposite verdict </p>
 
 
 <h2>Social Impact</h2>
@@ -225,7 +236,7 @@
     <p> <b> Score: 7 (Accept)</b></p>
     <p> <b> Strengths </b></p>
     <ul>
-        <li>ury learning innovatively addresses the issue of label disagreements in machine learning, particularly in societal contexts like online toxicity and misinformation detection.</li>
+        <li>Jury learning innovatively addresses the issue of label disagreements in machine learning, particularly in societal contexts like online toxicity and misinformation detection.</li>
         <li>The model architecture of jury learning allows for dynamic jury compositions, offering a responsive approach to incorporating diverse voices in machine learning models. This adaptability is crucial in societal contexts where opinions and societal norms are constantly evolving​​.</li>
         <li>The jury learning approach can lead to more performant and fair classifiers by taking into account the views of a wider range of annotators. This is reflected in the evaluation which shows changes in classification outcomes due to the increased diversity of jury composition</li>
         <li>The approach promotes reflective practices around dataset generation and model creation, encouraging practitioners to think critically about whose voices their models represent and why</li>
