@@ -154,6 +154,13 @@
     <div style="text-align:center;">
         <img src="images/model.png" alt="Model Architecture" width="800" height="300">
     </div>
+    <p>
+      The authors utilized TensorFlow Recommenders (TFRS) which inherently supports Deep & Cross Networks (DCNs). They incorporated BERTweet, a large-scale language model pre-trained on English Tweets by NVIDIA, via Huggingface’s TensorFlow API for pre-trained content embeddings within their recommender system. The adaptation of the model to the task involved an initial fine-tuning step using a large-scale toxicity dataset released by Jigsaw.
+
+      Initially, the authors co-trained all components of the model: fine-tuning the pre-trained language model and training the annotator embedding, group embeddings, and the DCN from randomly initialized values. Recognizing that BERT-based models tend to overfit after a few epochs of fine-tuning, while the newly initialized components benefit from longer training, they co-trained the entire model for two epochs, then froze the large language model and continued training the rest for eight more epochs. Further training showed no significant improvement in performance.
+
+      Standard hyperparameters for fine-tuning BERT-based models were chosen, including a learning rate of 2e-5, a batch size of 16, and a maximum token length of 128. DCN-specific hyperparameters were set to a constant embedding dimension of 32, a three-layer cross network of size 768, three dense layers of size 768, and an output dense layer of size 1. These parameters were determined after a small grid search.
+    </p>
 
 
     <div style="text-align:center;">
