@@ -157,13 +157,7 @@
     <p>
       A Deep & Cross Network (DCN) is used in the architecture. A typical DCN involves three sets of embeddings: content, annotator, and group. The content embedding enables prediction on previously unseen items by mapping those items into a shared space. The group embeddings make use of the data from all annotators who belong to each group, helping overcome sparsity in the dataset. The annotator embedding ensures that the model learns when each annotator differs from the groups they belong to. The DCN learns to combine these embeddings to predict each individual annotator's reaction to an example: the embeddings are concatenated into an input layer, then fed into a cross network containing multiple cross layers that model explicit feature interactions, and then combined with a deep network that models implicit feature interactions. The DCN architecture is modified to jointly train a pre-trained BERT-based model, using its pooler output as the content embeddings. 
     </p>
-    <p>
-      The authors utilized TensorFlow Recommenders (TFRS) which inherently supports Deep & Cross Networks (DCNs). They incorporated BERTweet, a large-scale language model pre-trained on English Tweets by NVIDIA, via Huggingface’s TensorFlow API for pre-trained content embeddings within their recommender system. The adaptation of the model to the task involved an initial fine-tuning step using a large-scale toxicity dataset released by Jigsaw.
-
-      Initially, the authors co-trained all components of the model: fine-tuning the pre-trained language model and training the annotator embedding, group embeddings, and the DCN from randomly initialized values. Recognizing that BERT-based models tend to overfit after a few epochs of fine-tuning, while the newly initialized components benefit from longer training, they co-trained the entire model for two epochs, then froze the large language model and continued training the rest for eight more epochs. Further training showed no significant improvement in performance.
-
-      Standard hyperparameters for fine-tuning BERT-based models were chosen, including a learning rate of 2e-5, a batch size of 16, and a maximum token length of 128. DCN-specific hyperparameters were set to a constant embedding dimension of 32, a three-layer cross network of size 768, three dense layers of size 768, and an output dense layer of size 1. These parameters were determined after a small grid search.
-    </p>
+   
 
 
     <div style="text-align:center;">
@@ -224,6 +218,23 @@
         <li>The authors should have discussed in more detail the limitations of this framework.</li>
         <li>Jury selection is an important aspect of this paper, and authors should have discussed a more algorithmic approach to it.</li>
         <li>Some parts of the paper were repetitive.</li>
+    </ul>
+
+    <h3> Reviewer 2 (Srijha Kalyan)</h3> <br>
+    <p> <b> Score: 7 (Accept)</b></p>
+    <p> <b> Strengths </b></p>
+    <ul>
+        <li>ury learning innovatively addresses the issue of label disagreements in machine learning, particularly in societal contexts like online toxicity and misinformation detection.</li>
+        <li>The model architecture of jury learning allows for dynamic jury compositions, offering a responsive approach to incorporating diverse voices in machine learning models. This adaptability is crucial in societal contexts where opinions and societal norms are constantly evolving​​.</li>
+        <li>The jury learning approach can lead to more performant and fair classifiers by taking into account the views of a wider range of annotators. This is reflected in the evaluation which shows changes in classification outcomes due to the increased diversity of jury composition</li>
+        <li>The approach promotes reflective practices around dataset generation and model creation, encouraging practitioners to think critically about whose voices their models represent and why</li>
+    </ul>
+
+    <p> <b> Weakness </b></p>
+    <ul>
+        <li>The paper says Jury Learning provides an orthogonal view of fairness but does not use any metrics to evaluate fairness.</li>
+        <li>The authors should have discussed in more detail the limitations of this framework</li>
+        <li>It would have been interesting if the paper presented existing approaches that try to model annotators and comparison of “jury learning” with them.</li>
     </ul>
 
 <h3>References</h3>
