@@ -52,7 +52,7 @@
           display: flex;
           align-items: center;
       }
-  
+
       .image-container img {
           width: 200px; /* Adjust the width as needed */
           height: auto;
@@ -89,7 +89,7 @@
               PhD candidate at Stanford <br>
               MS from UIUC <br>
               Citations: 2845 <br>
-  
+
           </p>
       </div>
       <br>
@@ -100,7 +100,7 @@
               PhD from University of Washington <br>
               MS from Stanford <br>
               Citations: 1811 <br>
-  
+
           </p>
       </div>
       <br>
@@ -111,15 +111,15 @@
               Ex Professor at Cornell <br>
               PhD from Dalhousie University <br>
               Citations: 28025 <br>
-  
-  
+
+
           </p>
       </div>
       <br>
       <div class="containerImg">
           <img src="images/tatsunori.png" alt="Tatsunori Hashimoto">
           <p> <b> Tatsunori Hashimoto</b> <br>
-  
+
               Assistant Professor at Stanford <br>
               Post Doc from Stanford University <br>
               PhD from MIT <br>
@@ -130,7 +130,7 @@
       <div class="containerImg">
           <img src="images/michael.png" alt="Michael S. Bernstein">
           <p> <b> Michael S. Bernstein </b> <br>
-  
+
               Associate Professor at Stanford <br>
               MS and PhD from MIT <br>
               Co-author in Image Net <br>
@@ -141,13 +141,13 @@
 
 <h2>Literature Review</h2>
 <p>
-  <b>Engaging Stakeholders in Algorithm Design: </b> The paper discusses the critique of unexamined majoritarianism in governance, which tends to exclude minority viewpoints. In response to this, jury learning is introduced as a means to control how majorities are formed, raising awareness of the consequences of potential majorities and encouraging intentionality in their selection. This approach aligns with the need in human-computer interaction and AI fairness for algorithms that balance multiple stakeholders' needs and interests. The work builds on advancements in algorithmic fairness, focusing on managing disparate beliefs and emphasizing the inclusion of diverse voices in algorithmic decision-making[1].
+  <b>Engaging Stakeholders in Algorithm Design: </b> The paper discusses the critique of unexamined majoritarianism in annotation process in ML models, which tends to exclude minority annotations.  In response to this, jury learning is introduced as a means to provide weight to the voices of the minority annotations. This approach aligns with the need in human-computer interaction and AI fairness [1] for algorithms that balance multiple stakeholders' needs and interests. Past works like WeBuildAI [2] make stakeholders design their own models representing their beliefs, and then a larger algorithm uses each of these models as a single vote when making a decision for the group. The jury learning approach, however, allows practitioners to model each relevant individual or group from existing datasets, enabling them to reason over and specify which individuals or groups their models should reflect. It also provides an orthogonal view to fairness where current AI fairness algorithms are outcome-centric, jury learning focuses fairness in the model input level.
 </p>
 <p>
-  <b>Disagreement Datasets and Machine Learning: </b> The paper explores the common practice in machine learning of using large datasets of individual beliefs, often aggregated into a single 'ground truth' label through majority voting. This method, while successful in many AI tasks, has limitations, especially in contexts where societal and cultural disagreements exist. The authors highlight the importance of understanding not just the existence of disagreement but also the nature and reasons behind it. They propose annotator-level modeling to better capture the distribution of opinions and provide insights into who disagrees and why. This approach contrasts with traditional methods that strive for an impartial and supposedly "unbiased" dataset, which may not fully capture the complexity and diversity of societal opinions[2].
-</p>
-<p>
-  <b>Real-Time Exploration and Tuning of Classifier Populations: </b> The paper addresses the practical challenges in machine learning related to the static nature of datasets. Traditional methods often require large-scale data collection whenever the relevant stakeholders change. The jury learning approach, however, allows practitioners to model each relevant individual or group from existing datasets, enabling them to reason over and specify which individuals or groups their models should reflect. This method offers a more dynamic and responsive way of incorporating diverse voices into machine learning models without the need for continually collecting new datasets[3].
+  <b>Disagreement in Datasets: </b> Disagreements are very common in annotation process of data for ML models especially in subjective tasks like toxicity detected, medical diagnosis, and news misinformation. Some past works have tried handling disagreements bu having common consensus between annotators. But  for some tasks such as those common in social computing contexts, much of the disagreement is likely irreducible [3], stemming from the socially contested nature of questions. Thus, The authors highlight the importance of understanding not just the existence of disagreement but also the nature and reasons behind it. They propose annotator-level modeling to better capture the distribution of opinions and provide insights into who disagrees and why. It also provides an opportunity to include voices and opinions that matter to us the most given our use-case.</p>
+  <p>
+    <b>Interactive Machine Learning (ML)</b> TA prominent area of ML research is integrating human-centered methods into machine learning systems. Interactive machine learning seeks methods to integrate human insight into the creation of ML models. Past works have used human-in-loop to provide more accurate labels[4]. Another line of work has sought to characterize best practices for designers and organizations developing such classifiers [5]. The paper add to this by providing this new interactive framework with visualizations increasing the explainability of classifier’s result.
+
 </p>
 
 <h2>Methodology</h2>
@@ -155,7 +155,7 @@
         <img src="images/model.png" alt="Model Architecture" width="800" height="300">
     </div>
     <p>
-      A Deep & Cross Network (DCN) is used in the architecture. A typical DCN involves three sets of embeddings: content, annotator, and group. The content embedding enables prediction on previously unseen items by mapping those items into a shared space. The group embeddings make use of the data from all annotators who belong to each group, helping overcome sparsity in the dataset. The annotator embedding ensures that the model learns when each annotator differs from the groups they belong to. The DCN learns to combine these embeddings to predict each individual annotator's reaction to an example: the embeddings are concatenated into an input layer, then fed into a cross network containing multiple cross layers that model explicit feature interactions, and then combined with a deep network that models implicit feature interactions. The DCN architecture is modified to jointly train a pre-trained BERT-based model, using its pooler output as the content embeddings. 
+      A Deep & Cross Network (DCN) is used in the architecture. A typical DCN involves three sets of embeddings: content, annotator, and group. The content embedding enables prediction on previously unseen items by mapping those items into a shared space. The group embeddings make use of the data from all annotators who belong to each group, helping overcome sparsity in the dataset. The annotator embedding ensures that the model learns when each annotator differs from the groups they belong to. The DCN learns to combine these embeddings to predict each individual annotator's reaction to an example: the embeddings are concatenated into an input layer, then fed into a cross network containing multiple cross layers that model explicit feature interactions, and then combined with a deep network that models implicit feature interactions. The DCN architecture is modified to jointly train a pre-trained BERT-based model, using its pooler output as the content embeddings.
     </p>
    
     <div style="text-align:center;">
@@ -235,7 +235,6 @@
     <p> <b> Weakness </b></p>
     <ul>
         <li>The paper missed the in-detail discussion of the applicability of “Jury Learning” in other domains.</li>
-        <li>The authors should have discussed in more detail the limitations of this framework.</li>
         <li>Jury selection is an important aspect of this paper, and authors should have discussed a more algorithmic approach to it.</li>
         <li>Some parts of the paper were repetitive.</li>
     </ul>
@@ -258,13 +257,16 @@
     </ul>
 
 <h3>References</h3>
-
-
-<p><a name="bottou-1990">[1]</a> <a href="https://papers.baulab.info/Bottou-1990.pdf"
-  >L&eacute;on Bottou and Patrick Gallinari.
-  <em>A framework for the cooperation of learning algorithms.</em></a>
-  Advances in neural information processing systems 3 (1990).
-</p>
+    <p>[1] Mehrabi, Ninareh, et al. "A survey on bias and fairness in machine learning." ACM computing surveys (CSUR) 54.6 (2021): 1-35.</p>
+    <p>[2] Lee, Min Kyung, et al. "WeBuildAI: Participatory framework for algorithmic governance." Proceedings of the ACM on Human-Computer Interaction 3.CSCW (2019): 1-35.</p>
+    <p>[3] Gordon, Mitchell L., et al. "The disagreement deconvolution: Bringing machine learning performance metrics in line with reality." Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems. 2021.</p>
+    <p>[4] Chang, Joseph Chee, Saleema Amershi, and Ece Kamar. "Revolt: Collaborative crowdsourcing for labeling machine learning datasets." Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems. 2017.</p>
+    <p>[5] Amershi, Saleema, et al. "Guidelines for human-AI interaction." Proceedings of the 2019 chi conference on human factors in computing systems. 2019.</p>
+<!--<p><a name="bottou-1990">[1]</a> <a href="https://papers.baulab.info/Bottou-1990.pdf"-->
+<!--  >L&eacute;on Bottou and Patrick Gallinari.-->
+<!--  <em>A framework for the cooperation of learning algorithms.</em></a>-->
+<!--  Advances in neural information processing systems 3 (1990).-->
+<!--</p>-->
 
 <h2>Team Members</h2>
 
