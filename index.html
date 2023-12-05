@@ -146,7 +146,7 @@
 <p>
   <b>Disagreement in Datasets: </b> Disagreements are very common in annotation process of data for ML models especially in subjective tasks like toxicity detected, medical diagnosis, and news misinformation. Some past works have tried handling disagreements bu having common consensus between annotators. But  for some tasks such as those common in social computing contexts, much of the disagreement is likely irreducible [3], stemming from the socially contested nature of questions. Thus, The authors highlight the importance of understanding not just the existence of disagreement but also the nature and reasons behind it. They propose annotator-level modeling to better capture the distribution of opinions and provide insights into who disagrees and why. It also provides an opportunity to include voices and opinions that matter to us the most given our use-case.</p>
   <p>
-    <b>Interactive Machine Learning (ML)</b> TA prominent area of ML research is integrating human-centered methods into machine learning systems. Interactive machine learning seeks methods to integrate human insight into the creation of ML models. Past works have used human-in-loop to provide more accurate labels[4]. Another line of work has sought to characterize best practices for designers and organizations developing such classifiers [5]. The paper add to this by providing this new interactive framework with visualizations increasing the explainability of classifier’s result.
+    <b>Interactive Machine Learning (ML)</b> TA prominent area of ML research is integrating human-centered methods into machine learning systems. Interactive machine learning seeks methods to integrate human insight into the creation of ML models. Past works have used human-in-loop to provide more accurate labels[4]. Another line of work has sought to characterize best practices for designers and organizations developing such classifiers [5]. The paper add to this by providing this new interactive framework with visualizations increasing the explainability of classifier's result.
 
 </p>
 
@@ -157,12 +157,12 @@
     <p>
       A Deep & Cross Network (DCN) is used in the architecture. A typical DCN involves three sets of embeddings: content, annotator, and group. The content embedding enables prediction on previously unseen items by mapping those items into a shared space. The group embeddings make use of the data from all annotators who belong to each group, helping overcome sparsity in the dataset. The annotator embedding ensures that the model learns when each annotator differs from the groups they belong to. The DCN learns to combine these embeddings to predict each individual annotator's reaction to an example: the embeddings are concatenated into an input layer, then fed into a cross network containing multiple cross layers that model explicit feature interactions, and then combined with a deep network that models implicit feature interactions. The DCN architecture is modified to jointly train a pre-trained BERT-based model, using its pooler output as the content embeddings.
     </p>
-   
+
     <div style="text-align:center;">
       <img src="images/model_performance.PNG" alt=": Performance against individual annotator's test labels" width="800" height="250">
     </div>
     <p> Performance against individual annotator's test labels for three models: today's standard state-of-the-art aggregate
-      approach (which is annotator-agnostic, and makes one prediction per example), a group-specific version of our proposed architecture, and the full version of our proposed architecture. The standard aggregated model’s performance varies substantially
+      approach (which is annotator-agnostic, and makes one prediction per example), a group-specific version of our proposed architecture, and the full version of our proposed architecture. The standard aggregated model's performance varies substantially
       between groups. For instance, it achieves an MAE of 0.83 for Asian annotators and 1.12 for Black annotators, a performance decrease of 35.0%. By comparison, we find that our model does show differences between groups, but with far smaller magnitudes.
       It achieves an MAE of 0.62 for Asian annotators and 0.65 for Black annotators, a performance decrease of 4.9%. </p>
 
@@ -170,7 +170,7 @@
         <img src="images/user-evaluation.png" alt="User Evaluation" width="800" height="300">
     </div>
     <p> For user evaluation, authors selected 19 content moderators. They explained them the Jury Learning algorithm, showed them a sample of toxic comments, and asked them to comprise juries. They found that in average 13.6% of decisions flipped between jury learning classifier customized for a community and an off the shelf classifier.</p>
-    
+
 
     <div style="text-align:center;">
       <img src="images/main_diag.PNG" alt="System Overview" width="800" height="500">
@@ -234,7 +234,7 @@
 
     <p> <b> Weakness </b></p>
     <ul>
-        <li>The paper missed the in-detail discussion of the applicability of “Jury Learning” in other domains.</li>
+        <li>The paper missed the in-detail discussion of the applicability of "Jury Learning" in other domains.</li>
         <li>Jury selection is an important aspect of this paper, and authors should have discussed a more algorithmic approach to it.</li>
         <li>Some parts of the paper were repetitive.</li>
     </ul>
@@ -244,7 +244,7 @@
     <p> <b> Strengths </b></p>
     <ul>
         <li>Jury learning innovatively addresses the issue of label disagreements in machine learning, particularly in societal contexts like online toxicity and misinformation detection.</li>
-        <li>The model architecture of jury learning allows for dynamic jury compositions, offering a responsive approach to incorporating diverse voices in machine learning models. This adaptability is crucial in societal contexts where opinions and societal norms are constantly evolving​​.</li>
+        <li>The model architecture of jury learning allows for dynamic jury compositions, offering a responsive approach to incorporating diverse voices in machine learning models. This adaptability is crucial in societal contexts where opinions and societal norms are constantly evolving.</li>
         <li>The jury learning approach can lead to more performant and fair classifiers by taking into account the views of a wider range of annotators. This is reflected in the evaluation which shows changes in classification outcomes due to the increased diversity of jury composition</li>
         <li>The approach promotes reflective practices around dataset generation and model creation, encouraging practitioners to think critically about whose voices their models represent and why</li>
     </ul>
@@ -253,7 +253,7 @@
     <ul>
         <li>The paper says Jury Learning provides an orthogonal view of fairness but does not use any metrics to evaluate fairness.</li>
         <li>The authors should have discussed in more detail the limitations of this framework</li>
-        <li>It would have been interesting if the paper presented existing approaches that try to model annotators and comparison of “jury learning” with them.</li>
+        <li>It would have been interesting if the paper presented existing approaches that try to model annotators and comparison of "jury learning" with them.</li>
     </ul>
 
 <h3>References</h3>
