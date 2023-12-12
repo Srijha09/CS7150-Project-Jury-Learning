@@ -190,27 +190,32 @@
     <br>
 
     <h3>Positive Impacts:</h3>
+    <br>
     <ul>
-        <li><strong>Fairness:</strong> Provides an orthogonal view of fairness. Fairness in AI has been output-centered but this paper provides an opportunity to include fairness at the model input level.</li>
+        <li><strong>Fairness:</strong>
+            The paper provides an orthogonal view of fairness. Fairness in AI has been output-centered meanwhile this paper provides an opportunity to include fairness at the model input level. Jury learning can be thought of as a form of procedural justice. While it doesn't guarantee the fairness of outcomes, instead we make claims around the correctness of the process.</li>
+        <br>
 
-        <li><strong>Diversity:</strong> Provides a way to include the values of diverse groups of people.</li>
-
-        <li><strong>Inclusion:</strong> Ensures we can hear the voices of underrepresented groups and learn from them.</li>
-
-        <li><strong>Interpretability:</strong> Provides visualizations and model results that are more interpretable.</li>
-
-        <li><strong>Better Decision Making:</strong> ML and HCI Practitioners can visualize results which can lead to better decision making.</li>
+        <li><strong>Diversity:</strong> Jury Learning provides a way to include the values and voices of diverse groups of people. We have the option of designing diverse juries and examining how their values and voices affect the outcome. This helps us understand how diversity affects the model's output.</li>
+        <br>
+        <li><strong>Inclusion:</strong> Jury Learning ensures that voices from underrepresented groups are heard and reflected in our models. It is especially important when we are designing models for platforms that are extensively used by underrepresented groups, for example, a toxicity detection model for a website used by the LGBTQ+ community.</li>
+        <br>
+        <li><strong>Interpretability:</strong> Jury Learning provides visualizations and model results that are more interpretable. For example, suppose you are a journalist and your comment was removed from a platform, with Jury Learning, you would have a better explanation, like "a group including 2 white men and 2 women of POC and 2 people from LGBTQ identity" found this toxic.</li>
+        <br>
+        <li><strong>Better Decision Making:</strong> Jury Learning provides visualizations that help ML and HCI Practitioners visualize and analyze the values and voices of different groups of people and even individual annotators. The practitioners can then make decisions about whom to include on the jury based on their applications.</li>
     </ul>
 
     <h3>Negative Impacts:</h3>
+    <br>
     <ul>
-        <li><strong>Bias:</strong> Biased Jurors and ML practitioners can create harmful models.</li>
-
-        <li><strong>Privacy:</strong> As it involves a lot of information about the demographics and identity of annotators, it can affect their privacy.</li>
-
-        <li><strong>Abdication of Responsibility:</strong> Who should be held accountable if something goes wrong? ML practitioners, jurors, or companies deploying the model.</li>
-
-        <li><strong>Ecological Fallacy:</strong> We associate attributes on a group with individuals when we take the means of all the juries as the final output.</li>
+        <li><strong>Bias:</strong> The Jury Learning hands a lot of power to the ML/HCI Practitioner. The practitioner can select morally corrupt juries and as the model emulates the voice of the jury, the model would be morally wrong. For example, a set of racist jurors in the jury can make the model racist.
+        </li>
+        <br>
+        <li><strong>Privacy:</strong> Jury Learning requires demographics and identity information which are sometimes very personal to annotators. Sometimes, some information or a set of identities might lead to the identification of the annotator hurting their privacy and promise of anonymization.</li>
+        <br>
+        <li><strong>Abdication of Responsibility:</strong> ML models are not 100% accurate in the real-world scenario. Thus, when a model fails who should be held responsible? ML Practioner, Jurors, or the organization deploying the models. We would need policies in place to handle these scenarios.</li>
+        <br>
+        <li><strong>Ecological Fallacy:</strong> The ecological fallacy happens when we associate group values with an individual just based on their belongingness to the group. In Jury Learning, we take the means of all the sampled juries as the final output which promotes ecological fallacy. We associate the voice of the entire group as the voice of individual jurors.</li>
     </ul>
 <h2>Industrial Application</h2>
     <p> Companies can shift the AI models they use to this new paradigm based on Jury Learning. It offers better interpretability, visualization and decision making. Suppose you are a journalist and your comment was removed by a toxicity detection model, you would want to know what about it was toxic. With Jury Learning, the companies can provide a better reasoning like "A jury of 6 people including 2 black women, 2 white women, and 2 asian men found this toxic". </p>
